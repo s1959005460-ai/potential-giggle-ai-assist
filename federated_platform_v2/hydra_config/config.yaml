@@ -1,0 +1,30 @@
+server:
+  port: 50051
+  min_clients: 3
+  aggregation_timeout: 30
+  persistence_path: ./federated_persist
+  global_model_file: global_model.pkl
+  eps_file: eps_reports.pkl
+  current_round: 0
+  initial_model: null
+
+privacy:
+  max_epsilon: 10.0
+  default_delta: 1e-5
+  audit_mode: conservative
+
+trainer:
+  name: gnn
+  local_epochs: 1
+
+metrics:
+  port: 8000
+
+logging:
+  level: INFO
+  filepath: ./logs/federated.log
+
+security:
+  tls: false
+  cert_file: null
+  key_file: null
